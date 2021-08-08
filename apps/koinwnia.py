@@ -59,7 +59,7 @@ erwtisi_5 = pd.DataFrame(data, columns=['apantisi', 'timi'])
 fig_2 = px.bar(erwtisi_5, x='timi', y='apantisi', labels = {"timi": "", 'apantisi': ''},
                 color_discrete_sequence=px.colors.qualitative.Antique)
 # automated figure modifications
-update_figure(fig_2, 'Πόσο άγχος αισθάνεστε ότι έχετε σε μια κλίμακα 1-5;<span style="font-size: 13px;"> (1=καθόλου άγχος έως 5=πάρα πολύ άγχος)</span>')
+update_figure(fig_2, 'Πόσο άγχος αισθάνεστε ότι έχετε σε μια κλίμακα 1-5;<br><span style="font-size: 13px;">(1=καθόλου άγχος έως 5=πάρα πολύ άγχος)</span>')
 fig_2.update_layout(hovermode='y',legend=dict(
     yanchor="top",
     y=1.10,
@@ -333,11 +333,11 @@ layout = html.Div(children=[
             dcc.Graph(figure=fig_3, style= {'height': '80%', 'width': '60%', 'margin': '0 auto'}),
             dcc.Graph(figure=fig_4,style= {'height': '80%', 'width': '60%', 'margin': '0 auto'}),
             html.H6('Δεύτερο lockdown - Δεκέμβριος, Ιανουάριος & Μάρτιος 2021', style={'font-family': 'arial', 'textAlign': 'center', 'text-decoration': 'underline'}),
-            dcc.Graph(figure=fig_5, style= {'display':'inline-block'}),
-            dcc.Graph(figure=fig_6, style= {'display':'inline-block'}),
-            dcc.Graph(figure=fig_7, style= {'display':'inline-block'}),
-            dcc.Graph(figure=fig_8, style= {'display':'inline-block'}),
-            dcc.Graph(figure=fig_9, style= {'display':'inline-block'}),
+            dcc.Graph(figure=fig_5, style= {'display':'inline-block', 'height': '80%'}),
+            dcc.Graph(figure=fig_6, style= {'display':'inline-block', 'height': '80%'}),
+            dcc.Graph(figure=fig_7, style= {'display':'inline-block', 'height': '80%'}),
+            dcc.Graph(figure=fig_8, style= {'display':'inline-block', 'height': '80%'}),
+            dcc.Graph(figure=fig_9, style= {'display':'inline-block', 'height': '80%'}),
             dcc.Graph(figure=fig_10, style= {'display':'inline-block', 'vertical-align': 'top'}),
             html.H6('Λήξη δεύτερου lockdown - Μάιος 2021', style={'font-family': 'arial', 'textAlign': 'center', 'text-decoration': 'underline'}),
             dcc.Graph(figure=fig_11, style= {'display':'inline-block'}),
