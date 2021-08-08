@@ -177,7 +177,7 @@ fig_8 = px.bar(erwtisi_7, x='date', y='timi',  labels = {"timi": "", 'date': ""}
 for a in fig_8.layout.annotations:
     a.text = a.text.split("=")[1]
 # automated figure update
-update_figure(fig_8, 'Ποια είναι η κύρια πηγή ενημέρωσής σας αναφορικά με την πανδημία του κορωνοϊού;')
+update_figure(fig_8, 'Ποια είναι η κύρια πηγή ενημέρωσής σας αναφορικά<br>με την πανδημία του κορωνοϊού;')
 # smaller text in graph
 fig_8.update_traces(textfont_size=10, hovertemplate="<br>".join(["%{y}%"]))
 
@@ -294,7 +294,7 @@ for a in fig_15.layout.annotations:
 # automated figure update
 update_figure(fig_15, 'Ποια είναι η εργασιακή σας κατάσταση αυτή την περίοδο;')
 #specific legend position
-fig_15.update_layout(margin=dict(l=30, r=30, t=200, b=50),
+fig_15.update_layout(margin=dict(l=30, r=30, t=250, b=50),
     legend=dict(
     yanchor="top",
     y=1.14,
