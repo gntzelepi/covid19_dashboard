@@ -327,8 +327,8 @@ layout = html.Div(children=[
             html.Br(),
             
             html.H6('Πρώτο lockdown - Απρίλιος 2020', style={'font-family': 'arial', 'textAlign': 'center', 'text-decoration': 'underline'}),
-            dcc.Graph(figure=fig, style= {'display':'inline-block', 'height': '80%'}), # inline-block is used for 2 graphs side by side
-            dcc.Graph(figure=fig_2, style= {'display':'inline-block', 'vertical-align': 'top'}), # vertical-align is used for alighment of one graph according to the top of the other
+            dcc.Graph(figure=fig, style= {'display':'inline-block', 'height': '100%', 'width': '50%'}), # inline-block is used for 2 graphs side by side
+            dcc.Graph(figure=fig_2, style= {'display':'inline-block', 'vertical-align': 'top', 'height': '100%', 'width': '50%'}), # vertical-align is used for alighment of one graph according to the top of the other
             html.H6('Λήξη πρώτου lockdown - Σεπτέμβριος 2020', style={'font-family': 'arial', 'textAlign': 'center', 'text-decoration': 'underline'}),
             dcc.Graph(figure=fig_3, style= {'height': '80%', 'width': '60%', 'margin': '0 auto'}),
             dcc.Graph(figure=fig_4,style= {'height': '80%', 'width': '80%', 'margin': '0 auto'}),
