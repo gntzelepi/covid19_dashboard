@@ -149,7 +149,7 @@ layout = html.Div(children=[
             dcc.Graph(figure=fig_3, style= {'display':'inline-block','height': '100%', 'width': '50%'}),
             dcc.Graph(figure=fig_4, style= {'display':'inline-block', 'height': '100%', 'width': '50%'}),
             dcc.Graph(figure=fig_5, style= {'display':'inline-block', 'height': '100%', 'width': '50%'}),
-            dcc.Graph(figure=fig_6, style= {'display':'inline-block', 'height': '100%', 'width': '50%'}),
+            dcc.Graph(figure=fig_6, style= {'display':'inline-block', 'height': '100%', 'width': '50%', 'vertical-align': 'top'}),
 
     ]),
         
