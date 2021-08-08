@@ -141,7 +141,7 @@ layout = html.Div(children=[
         html.Div(children=[
             html.H4('ΕΞΕΛΙΞΗ ΤΗΣ ΠΑΝΔΗΜΙΑΣ ΣΤΗΝ ΕΛΛΑΔΑ', style={'resize': 'none','font-family': 'arial', 'fontSize': 22, 'textAlign': 'center' }),
             html.Br(),
-            dcc.Textarea(value='Η εξέλιξη της πανδημίας στη χώρα, συμπεριλαμβανομένων των κρουσμάτων, θανάτων νοσούντων με COVID-19, εισαγωγών σε ΜΕΘ, εμβολιασμών και θετικότητας των τεστ.', style={'font-family': 'arial', 'width': '100%', 'height': 5, 'textAlign': 'center', 'border':'none'}),
+            dcc.Textarea(value='Η εξέλιξη της πανδημίας στη χώρα, συμπεριλαμβανομένων των κρουσμάτων, θανάτων νοσούντων, εισαγωγών σε ΜΕΘ, τεστ & θετικότητας αυτών και των εμβολιασμών.', style={'font-family': 'arial', 'width': '100%', 'height': 5, 'textAlign': 'center', 'border':'none'}),
             html.Br(),
             html.Br(),
             dcc.Graph(figure=fig, style= {'display':'inline-block', 'height': '100%', 'width': '50%'}),

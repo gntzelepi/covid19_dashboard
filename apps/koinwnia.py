@@ -297,7 +297,7 @@ update_figure(fig_15, 'Ποια είναι η εργασιακή σας κατά
 fig_15.update_layout(margin=dict(l=30, r=30, t=250, b=50),
     legend=dict(
     yanchor="top",
-    y=1.14,
+    y=1.2,
     xanchor="center",
     x=0.47))
 # smaller text in graph
@@ -331,7 +331,7 @@ layout = html.Div(children=[
             dcc.Graph(figure=fig_2, style= {'display':'inline-block', 'vertical-align': 'top'}), # vertical-align is used for alighment of one graph according to the top of the other
             html.H6('Λήξη πρώτου lockdown - Σεπτέμβριος 2020', style={'font-family': 'arial', 'textAlign': 'center', 'text-decoration': 'underline'}),
             dcc.Graph(figure=fig_3, style= {'height': '80%', 'width': '60%', 'margin': '0 auto'}),
-            dcc.Graph(figure=fig_4,style= {'height': '80%', 'width': '60%', 'margin': '0 auto'}),
+            dcc.Graph(figure=fig_4,style= {'height': '80%', 'width': '40%', 'margin': '0 auto'}),
             html.H6('Δεύτερο lockdown - Δεκέμβριος, Ιανουάριος & Μάρτιος 2021', style={'font-family': 'arial', 'textAlign': 'center', 'text-decoration': 'underline'}),
             dcc.Graph(figure=fig_5, style= {'display':'inline-block', 'height': '100%', 'width': '50%'}),
             dcc.Graph(figure=fig_6, style= {'display':'inline-block', 'height': '100%', 'width': '50%'}),
