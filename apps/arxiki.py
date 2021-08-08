@@ -59,7 +59,7 @@ update_figure(fig_2,'Ημερήσιοι θάνατοι από COVID-19')
 icu_df = pd.read_csv(DATA_PATH.joinpath('icu_dash.csv'))
 
 # Figure 3 
-fig_3 = px.line(x=icu_df['Date'], y=icu_df['���'],
+fig_3 = px.line(x=icu_df['Date'], y=icu_df['timi'],
              labels=dict(x='Date', y=""), color_discrete_sequence=['rgb(136,204,238)'])
 # automated figure 3 modifications
 update_figure(fig_3, 'Εξέλιξη εισαγωγών ΜΕΘ')
