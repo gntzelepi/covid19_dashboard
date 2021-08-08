@@ -37,6 +37,7 @@ def update_figure(figure, title):
 
 # Dataset 1
 erwtisi_6 = pd.read_csv(DATA_PATH.joinpath("erwtisi_6_apr20.csv"))
+
 # Figure 1
 fig= px.bar(erwtisi_6, x='erwtisi', y='timi', labels = {"apantisi": "", "timi":""}, 
                color_discrete_sequence=px.colors.qualitative.Pastel, facet_col_wrap=1,
@@ -48,10 +49,12 @@ for a in fig.layout.annotations:
 update_figure(fig,'Την περίοδο αυτή, κάνετε τα παρακάτω<br>περισσότερο,το ίδιο, ή λιγότερο, σε σύγκριση με 3-4 μήνες πριν;')
 
 
+
 # Dataset 2
 data = {'apantisi': ['1', '2', '3', '4', '5'],
        'timi': [14.4, 15, 33, 27.2, 10.4]}
 erwtisi_5 = pd.DataFrame(data, columns=['apantisi', 'timi'])
+
 # Figure 2
 fig_2 = px.bar(erwtisi_5, x='timi', y='apantisi', labels = {"timi": "", 'apantisi': ''},
                 color_discrete_sequence=px.colors.qualitative.Antique)
@@ -64,8 +67,10 @@ fig_2.update_layout(hovermode='y',legend=dict(
     x=0.47))
 
 
+
 # Dataset 3
 erwtisi_11 = pd.read_csv(DATA_PATH.joinpath("erwtisi_11_sept20.csv"))
+
 # Figure 3
 fig_3 = px.bar(erwtisi_11, x='vathmos', y='erwtisi', color='apantisi',labels = {"erwtisi": "", "vathmos":""}, 
                color_discrete_sequence=px.colors.qualitative.Antique, text='vathmos')
@@ -87,13 +92,13 @@ fig_3.update_layout(hovermode='y',
         t=100,
         pad=4))
 # hover info & smaller text in graph
-fig_3.update_traces(textfont_size=10,
-    hovertemplate="<br>".join([
-        "%{x}%"]))
+fig_3.update_traces(textfont_size=10, hovertemplate="<br>".join(["%{x}%"]))
+
 
 
 # Dataset 4
 erwtisi_19 = pd.read_csv(DATA_PATH.joinpath("erwtisi_19_sept20.csv"))
+
 # Figure 4
 fig_4 = px.bar(erwtisi_19, x='timi', y='apantisi', color='vathmos', labels = {"apantisi": "", "timi":""}, 
                color_discrete_sequence=px.colors.qualitative.Bold, facet_col_wrap=2, text='timi', 
@@ -110,14 +115,13 @@ fig_4.update_layout(hovermode='y', legend=dict(
     xanchor="center",
     x=0.47))
 # smaller text in graph & hover info modifications
-fig_4.update_traces(textfont_size=13,
-                   hovertemplate="<br>".join(["%{x}%"]))
+fig_4.update_traces(textfont_size=13, hovertemplate="<br>".join(["%{x}%"]))
+
 
 
 # Dataset 5
-data = {'apantisi': ['Σίγουρα ναι', 'Μάλλον ναι', 'Μάλλον όχι', 'Σίγουρα όχι', 'Δεν έχω αποφασίσει', 'ΔΑ'],
-       'timi': [32.5, 33.8, 13.1, 14.3, 5.2, 1.1]}
-erwtisi_13 = pd.DataFrame(data, columns=['apantisi', 'timi'])
+erwtisi_13 = pd.read_csv(DATA_PATH.joinpath("erwtisi_13_dash.csv"))
+
 # Figure 5
 fig_5 = px.bar(erwtisi_13, x='apantisi', y='timi', labels = {"timi": "", 'apantisi': ''}, color='apantisi', text='timi',
                 color_discrete_sequence=px.colors.qualitative.Vivid)
@@ -127,13 +131,10 @@ fig_5.update_layout(margin=dict(l=30, r=30, t=200, b=70))
 fig_5.update_traces(textfont_size=12, textposition='inside', hovertemplate="<br>".join(["%{y}%"]))
 
 
+
 # Dataset 6
-data = {'apantisi': ['Θα ήµουν από τους πρώτους<br>που θα έκανε το εµβόλιο', 
-                     'Θα έκανα το εµβόλιο αφού το<br>συζητούσαµε άλλους<br>(γιατρούς, συγγενείς, φαρµακοποιό)',
-                    'Θα έκανα το εµβόλιο αφού το<br>έχει κάνει η πλειοψηφία του κόσµου',
-                    'Θα ήµουν από τους τελευταίους<br>που θα έκανε το εµβόλιο'],
-       'timi': [25.7, 51.1, 18.5, 4.2]}
-erwtisi_14 = pd.DataFrame(data, columns=['apantisi', 'timi'])
+erwtisi_14 = pd.read_csv(DATA_PATH.joinpath("erwtisi_14_dash.csv"))
+
 # Figure 6
 fig_6 = px.bar(erwtisi_14, x='timi', y='apantisi', labels = {"apantisi": "", "timi":""}, 
                color_discrete_sequence=px.colors.qualitative.Dark2, text='timi')
@@ -142,8 +143,10 @@ update_figure(fig_6, 'Με ποια από τις παρακάτω προτάσ�
 fig_6.update_traces(textfont_size=12)
 
 
+
 # Dataset 7
 erwtisi_4 = pd.read_csv(DATA_PATH.joinpath("erwtisi_4_jan21.csv"))
+
 # Figure 7
 fig_7 = px.bar(erwtisi_4, x='timi', y='apantisi', labels = {"apantisi": "", "timi":""}, 
                color_discrete_sequence=px.colors.qualitative.Pastel2, facet_col_wrap=1, text='timi', 
@@ -163,8 +166,10 @@ fig_7.update_layout(hovermode='y',legend=dict(
 fig_7.update_traces(textfont_size=12,hovertemplate="<br>".join(["%{x}"]))
 
 
+
 # Dataset 8
 erwtisi_7 = pd.read_csv(DATA_PATH.joinpath("erwtisi_7_jan21.csv"))
+
 # Figure 8
 fig_8 = px.bar(erwtisi_7, x='date', y='timi',  labels = {"timi": "", 'date': ""}, 
                color_discrete_sequence=px.colors.qualitative.Plotly, text='timi',
@@ -177,8 +182,10 @@ update_figure(fig_8, 'Ποια είναι η κύρια πηγή ενημέρω�
 fig_8.update_traces(textfont_size=10, hovertemplate="<br>".join(["%{y}%"]))
 
 
+
 # Dataset 9
 erwtisi_7 = pd.read_csv(DATA_PATH.joinpath("erwtisi_7_march21.csv"))
+
 # Figure 9
 fig_9 = px.bar(erwtisi_7, x='timi', y='erwtisi', color='vathmos', labels = {"erwtisi": "", "timi":""}, 
                color_discrete_sequence=px.colors.qualitative.Pastel2, facet_col_wrap=1, text='timi', height=700,
@@ -198,8 +205,10 @@ fig_9.update_layout(hovermode='y',legend=dict(
 fig_9.update_traces(textfont_size=10, hovertemplate="<br>".join(["%{x}%"]))
 
 
+
 # Dataset 10
 erwtisi_14 = pd.read_csv(DATA_PATH.joinpath('erwtisi_14_march21.csv'))
+
 # Figure 10
 fig_10 = px.bar(erwtisi_14, x='timi', y='perifereia', color='apantisi', labels = {"perifereia": "", "timi":""}, 
                color_discrete_sequence=px.colors.qualitative.Vivid, text='timi')
@@ -211,16 +220,10 @@ fig_10.update_layout(hovermode='y')
 fig_10.update_traces(textfont_size=12, hovertemplate="<br>".join(["%{x}%"]))
 
 
+
 # Dataset 11
-erwtisi_1 = pd.read_csv(DATA_PATH.joinpath("erwtisi_1.csv"))
-old = {
-    "Pros swsti": "Προς τη σωστή",
-    "Pros lathos": "Προς τη λάθος",
-    "oute": "Ούτε προς τη σωστή, ούτε προς τη λάθος",
-    "dg": "ΔΓ/ΔΑ"
-}
-erwtisi_1 = erwtisi_1.replace(old)
-erwtisi_1['timi'] = pd.to_numeric(erwtisi_1.timi) 
+erwtisi_1 = pd.read_csv(DATA_PATH.joinpath("erwtisi_1_dash.csv"))
+
 # Figure 11
 fig_11 = px.line(erwtisi_1, x='date', y='timi', color='apantisi', labels = {"timi": ""},  
                 color_discrete_sequence=px.colors.qualitative.Pastel1)
@@ -231,6 +234,7 @@ fig_11.data[0].update(mode='markers+lines')
 fig_11.data[1].update(mode='markers+lines')
 fig_11.data[2].update(mode='markers+lines')
 fig_11.data[3].update(mode='markers+lines')
+
 
 
 # Dataset 12
@@ -253,19 +257,17 @@ fig_12.update_layout(hovermode='y',legend=dict(
 fig_12.update_traces(textfont_size=12, hovertemplate="<br>".join(["%{x}%"]))
 
 
+
 # Dataset 13
-erwtisi_8 = pd.read_csv(DATA_PATH.joinpath("erwtisi_8.csv"))
-old = {
-    'Ειδικές εισηγητικές επιτροπές εμπειρογνωμόνων': 'Ειδικές εισηγητικές<br>επιτροπές εμπειρογνωμόνων',
-    'Υπουργείο Υγείας/Υγειονομικές Υπηρεσίες': "Υπουργείο Υγείας,<br>Υγειονομικές Υπηρεσίες"
-}
-erwtisi_8 = erwtisi_8.replace(old)
+erwtisi_8 = pd.read_csv(DATA_PATH.joinpath("erwtisi_8_dash.csv"))
+
 # Figure 13
 fig_13 = px.bar(erwtisi_8, x='foreas', y='timi', color='date', labels = {"timi": "", 'foreas':''}, 
                color_discrete_sequence=px.colors.qualitative.Pastel1, barmode='group')
 # automated figure update
 update_figure(fig_13, 'Πόση εμπιστοσύνη έχετε στους παρακάτω,<br> αναφορικά με την αντιμετώπιση της πανδημίας του κορωνοϊού;<br></span><span style="font-size: 13px;">(μέσοι όροι, από 1=καθόλου εμπιστοσύνη έως 5=απόλυτη εμπιστοσύνη</span>)')
 fig_13.update_traces(textposition='outside', textfont_size=12)
+
 
 
 # Dataset 14
@@ -277,6 +279,7 @@ fig_14 = px.bar(erwtisi_19, x='date', y='timi', color='apantisi', labels = {"apa
 update_figure(fig_14, 'Εσείς προσωπικά σκέφτεστε να εμβολιαστείτε ή όχι κατά του νέου κορωνοϊού;')
 # smaller text in graph
 fig_14.update_traces(textposition='outside', textfont_size=12, hovertemplate="<br>".join(["%{y}%"]))
+
 
 
 # Dataset 15
@@ -299,7 +302,6 @@ fig_15.update_layout(margin=dict(l=30, r=30, t=200, b=50),
     x=0.47))
 # smaller text in graph
 fig_15.update_traces(textfont_size=12, hovertemplate="<br>".join(["%{y}%"]))
-
 
 
 
