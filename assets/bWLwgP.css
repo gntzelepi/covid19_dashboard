@@ -169,11 +169,15 @@ blockquote {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
   color: #1EAEDB;
-  text-decoration: underline;
-  cursor: pointer;}
+  cursor: pointer;
+}
 a:hover {
-  color: #0FA0CE; }
-
+  color: #0FA0CE;
+}
+a:active , a:focus{
+  font-weight: bold;
+  color: #0FA0CE;
+}
 
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

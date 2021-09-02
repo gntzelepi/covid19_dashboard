@@ -7,35 +7,37 @@ from app import app
 from app import server
 
 
-# Connect to your app pages
+# Connect to app pages
 from apps import arxiki, koinwnia, oikonomia
 
 
-app.layout = html.Div([
-    dcc.Location(id='url', refresh=False),
-    html.Div([
-        dcc.Link('Εξέλιξη Πανδημίας  |  ', href='/apps/arxiki'),
-        dcc.Link('Οικονομία  |  ', href='/apps/oikonomia'),
-        dcc.Link('Κοινωνία', href='/apps/koinwnia'),
-    ], className="row"),
-    html.Div(id='page-content', children=[])
-])
+app.layout = html.Div(
+    [
+        dcc.Location(id="url", refresh=False),
+        html.Div(
+            [
+                dcc.Link("Εξέλιξη Πανδημίας  |  ", href="/apps/arxiki"),
+                dcc.Link("Οικονομία  |  ", href="/apps/oikonomia"),
+                dcc.Link("Κοινωνία", href="/apps/koinwnia"),
+            ],
+            className="row",
+        ),
+        html.Div(id="page-content", children=[]),
+    ]
+)
 
 
-
-@app.callback(Output('page-content', 'children'),
-              [Input('url', 'pathname')])
+@app.callback(Output("page-content", "children"), [Input("url", "pathname")])
 def display_page(pathname):
-    if pathname == '/apps/arxiki':
+    if pathname == "/apps/arxiki":
         return arxiki.layout
-    if pathname == '/apps/oikonomia':
+    if pathname == "/apps/oikonomia":
         return oikonomia.layout
-    if pathname == '/apps/koinwnia':
+    if pathname == "/apps/koinwnia":
         return koinwnia.layout
     else:
         return arxiki.layout
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run_server(debug=False)
