@@ -48,6 +48,9 @@ fig.data[1].name = "2020"
 fig.data[2].name = "2021"
 # hover info modifications
 fig.update_traces(hovertemplate="<br>".join(["%{y}"]))
+# replace "k" suffix with simple comma when hovering
+fig.update_layout(
+    yaxis=dict(tickformat=",.0f"))
 
 
 # Expenditure Dataset
@@ -130,9 +133,11 @@ fig_3.update_layout(
     margin=dict(l=100, r=100, t=30, b=150),
     paper_bgcolor="White",
     legend=dict(yanchor="top", y=0.97, xanchor="center", x=0.50),
+    yaxis=dict(tickformat=",.0f")
 )
+
 # make x axis tick labels smaller
-fig_3.update_xaxes(tickfont_size=8)
+fig_3.update_xaxes(tickfont_size=7)
 # annotation text
 note = 'Οι δαπάνες επί της εγχώριας παραγωγής μιας συγκεκριμένης χρονικής περιόδου αναλογούν σε εισοδήματα των παραγωγικών συντελεστών<br>που χρησιμοποιήθηκαν στην παραγωγική διαδικασία. Αυτά είναι:<br>•Ακαθάριστο λειτουργικό πλεόνασμα: πλεόνασμα ή έλλειμμα των παραγωγικών δραστηριοτήτων πριν το πληρωτέο/εισπρακτέο σύνολο<br>των τόκων, ενοικίων ή επιβαρύνσεων των παραγωγικών μονάδων ως δανειζόμενοι ή ιδιοκτήτες περιουσιακών στοιχείων.<br>Αντιπροσωπεύει το εισπρακτέο εισόδημα των μονάδων από την ιδία χρήση των παραγωγικών εγκαταστάσεων που κατέχουν.<br>•Μεικτό εισόδημα: αμοιβή της παρεχόμενης εργασίας από τον ιδιοκτήτη (ή μέλη της οικογένειάς του) μιας μη ανώνυμης εταιρικής επιχείρησης.<br>•Αμοιβές εξαρτημένης εργασίας: συνολική αμοιβή σε μετρητά ή είδος χορηγούμενη από τον εργοδότη στον εργαζόμενο σαν ανταμοιβή για<br>την εργασία που παρασχέθηκε κατά την διάρκεια της ορισμένης περιόδου.<br>•Φόροι & επιδοτήσεις παραγωγής και εισαγωγών: μονομερείς πληρωμές σε μετρητά ή είδος, εισπραττόμενες (φόροι) ή πληρωνόμενες<br>(επιδοτήσεις) από την Γενική Κυβέρνηση ή από οργανισμούς της Ευρωπαϊκής Ένωσης, όσον αφορά την παραγωγή ή εισαγωγή αγαθών<br>και υπηρεσιών, την απασχόληση, την ιδιοκτησία ή τη χρήση γης, κτιρίων ή άλλων περιουσιακών στοιχείων που χρησιμοποιούνται<br>στην παραγωγή.<br>Πηγή:<a href="https://www.statistics.gr/documents/20181/862ae13b-91b9-4141-9c78-2d3a02084cb8">Ελληνική Στατιστική Αρχή (2012)</a> · <a href="http://hdl.handle.net/11419/1560">Κυρίκος (2015)</a>, Δεδομένα: <a href="https://ec.europa.eu/eurostat/databrowser/view/nama_10_gdp/default/table?lang=en">Eurostat (2021)</a>'
 # annotation addition
@@ -231,7 +236,7 @@ fig_6 = px.line(
     ],
 )
 # automated figure modifications
-update_figure(fig_6, "Εξέλιξη ποσοστού ανεργίας")
+update_figure(fig_6, "Εξέλιξη ποσοστού ανεργίας (%)")
 fig_6.data[0].showlegend = True
 # add markers to line
 fig_6.data[0].update(mode="markers+lines")
@@ -264,7 +269,7 @@ fig_7.update_xaxes(type="category")
 for data in fig_7.data:
     data["width"] = 0.3
 # make space for explanation / annotation
-fig_7.update_layout(margin=dict(l=20, r=50, t=120, b=130), paper_bgcolor="White")
+fig_7.update_layout(margin=dict(l=20, r=50, t=120, b=130), paper_bgcolor="White", yaxis=dict(tickformat=",.0f"))
 # annotation text
 note = 'Ισοζύγιο πληρωμών: στατιστικός πίνακας καταγραφής του σύνολο των οικονομικών συναλλαγών μεταξύ των κατοίκων<br>της χώρας και του υπόλοιπου κόσμου κατά τη διάρκεια ενός συγκεκριμένου χρονικού διαστήματος, συνήθως ενός έτους.<br>Βασικές κατηγορίες συναλλαγών είναι οι συναλλαγές σε αγαθά, υπηρεσίες, πρωτογενή εισοδήματα και δευτερογενή<br>εισοδήματα, το άθροισμα των ισοζυγίων των οποίων συνιστά το ισοζύγιο τρεχουσών συναλλαγών.<br>Πηγή:<a href="https://www.bankofgreece.gr/statistika/ekswterikos-tomeas/isozygio-plhrwmwn">Τράπεζα της Ελλάδος (χ.χ)</a>, Δεδομένα: <a href="https://ec.europa.eu/eurostat/databrowser/view/tipsbp14/default/table?lang=en">Eurostat (2021)</a>'
 # annotation addition

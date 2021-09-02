@@ -42,6 +42,8 @@ update_figure(
     fig,
     "Την περίοδο αυτή, κάνετε τα παρακάτω<br>περισσότερο,το ίδιο, ή λιγότερο, σε σύγκριση με 3-4 μήνες πριν;",
 )
+# show percentage when hovering
+fig.update_traces(hovertemplate="<br>".join(["%{y}%"]))
 
 
 # Dataset 2
@@ -65,6 +67,8 @@ update_figure(
 fig_2.update_layout(
     hovermode="y", legend=dict(yanchor="top", y=1.10, xanchor="center", x=0.47)
 )
+# show percentage when hovering
+fig_2.update_traces(hovertemplate="<br>".join(["%{x}%"]))
 
 
 # Dataset 3
@@ -168,7 +172,7 @@ update_figure(
     "Με ποια από τις παρακάτω προτάσεις συμφωνείτε περισσότερο;<br>(N=66.3%, Σίγουρα/Μάλλον Ναι)",
 )
 # smaller text in graph & hover info modifications
-fig_6.update_traces(textfont_size=12)
+fig_6.update_traces(textfont_size=12, hovertemplate="<br>".join(["%{x}%"]))
 # show x labels when hovering
 fig_6.update_layout(
     hovermode="x"
@@ -304,6 +308,10 @@ fig_11.data[0].update(mode="markers+lines")
 fig_11.data[1].update(mode="markers+lines")
 fig_11.data[2].update(mode="markers+lines")
 fig_11.data[3].update(mode="markers+lines")
+# show percentage when hovering
+fig_11.update_traces(hovertemplate="<br>".join(["%{y}%"]))
+fig_11.update_layout(font=dict(
+            size=10))
 
 
 # Dataset 12
