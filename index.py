@@ -8,7 +8,7 @@ from app import server
 
 
 # Connect to app pages
-from apps import arxiki, koinwnia, oikonomia
+from apps import arxiki, koinwnia, oikonomia, pandimia
 
 
 app.layout = html.Div(
@@ -16,7 +16,8 @@ app.layout = html.Div(
         dcc.Location(id="url", refresh=False),
         html.Div(
             [
-                dcc.Link("Εξέλιξη Πανδημίας  |  ", href="/apps/arxiki"),
+                dcc.Link("Αρχική  |  ", href="/apps/arxiki"),
+                dcc.Link("Εξέλιξη Πανδημίας  |  ", href="/apps/pandimia"),
                 dcc.Link("Οικονομία  |  ", href="/apps/oikonomia"),
                 dcc.Link("Κοινωνία", href="/apps/koinwnia"),
             ],
@@ -31,6 +32,8 @@ app.layout = html.Div(
 def display_page(pathname):
     if pathname == "/apps/arxiki":
         return arxiki.layout
+    if pathname == "/apps/pandimia":
+        return pandimia.layout
     if pathname == "/apps/oikonomia":
         return oikonomia.layout
     if pathname == "/apps/koinwnia":
