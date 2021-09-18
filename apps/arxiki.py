@@ -8,8 +8,6 @@ from .utils import header_md
 layout = html.Div(
     children=[
         html.Br(),
-        header_md,
-        html.Br(),
         html.Div(
             [
                 html.Div(
@@ -20,8 +18,9 @@ layout = html.Div(
                                     "font-family": "arial",
                                     "textAlign": "center",
                                     "text-decoration": "underline",
-                                    "fontSize": 22,
+                                    "fontSize": 25,
                                     }),
+                        html.Br(),
                         html.Br(),
                         dcc.Markdown("""
                             Το ηλεκτρονικό αυτό ταμπλό, αποτελεί το προϊόν της διπλωματικής εργασίας της Τζελέπη Γεωργίας, 
@@ -40,6 +39,7 @@ layout = html.Div(
                             },
                         ),
                         html.Br(),
+                        html.Br(),
                         html.Label([
                             'Ο κώδικας του Dashboard καθώς και οι πηγές των γραφημάτων μπορούν να βρεθούν ',
                             html.A('εδώ.', href='https://github.com/gntzelepi/covid19_dashboard'),
@@ -53,6 +53,7 @@ layout = html.Div(
                                 'float': 'center'
                                 },
                         ),
+                        html.Br(),
                         dcc.Markdown("""
                                 ***ΠΕΡΙΗΓΗΣΗ***     Πάνω αριστερά εντοπίζονται οι 4 σελίδες του ταμπλό. 
                                 Καθεμία λέξη αντιπροσωπεύει και την αντίστοιχη θεματική σελίδα. 
@@ -81,6 +82,9 @@ layout = html.Div(
                         ),
                     ],
                 ),
+                html.Br(),
+                html.Br(),
+                html.Br(),
                 html.Br(),
                 html.Div([
                     html.Img(src=app.get_asset_url('auth.png'), 
