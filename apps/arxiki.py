@@ -13,16 +13,19 @@ layout = html.Div(
                 html.Div(
                     children=[
                         html.Br(),
-                        dcc.Markdown("**COVID-19 Dashboard**",
-                                     style={
-                                    "font-family": "arial",
-                                    "textAlign": "center",
-                                    "text-decoration": "underline",
-                                    "fontSize": 25,
-                                    }),
+                        dcc.Markdown(
+                            "**COVID-19 Dashboard**",
+                            style={
+                                "font-family": "arial",
+                                "textAlign": "center",
+                                "text-decoration": "underline",
+                                "fontSize": 25,
+                            },
+                        ),
                         html.Br(),
                         html.Br(),
-                        dcc.Markdown("""
+                        dcc.Markdown(
+                            """
                             Το ηλεκτρονικό αυτό ταμπλό, αποτελεί το προϊόν της διπλωματικής εργασίας της Τζελέπη Γεωργίας, 
                             η οποία φοιτά στο τμήμα Μηχανικών Χωροταξίας & Ανάπτυξης, της Πολυτεχνικής Σχολής του Αριστοτελείου 
                             Πανεπιστημίου Θεσσαλονίκης.
@@ -40,9 +43,13 @@ layout = html.Div(
                         ),
                         html.Br(),
                         html.Br(),
-                        html.Label([
-                            'Ο κώδικας του Dashboard καθώς και οι πηγές των γραφημάτων μπορούν να βρεθούν ',
-                            html.A('εδώ.', href='https://github.com/gntzelepi/covid19_dashboard'),
+                        html.Label(
+                            [
+                                "Ο κώδικας του Dashboard καθώς και οι πηγές των γραφημάτων μπορούν να βρεθούν ",
+                                html.A(
+                                    "εδώ.",
+                                    href="https://github.com/gntzelepi/covid19_dashboard",
+                                ),
                             ],
                             style={
                                 "font-family": "arial",
@@ -50,11 +57,12 @@ layout = html.Div(
                                 "height": 50,
                                 "textAlign": "center",
                                 "resize": "none",
-                                'float': 'center'
-                                },
+                                "float": "center",
+                            },
                         ),
                         html.Br(),
-                        dcc.Markdown("""
+                        dcc.Markdown(
+                            """
                                 ***ΠΕΡΙΗΓΗΣΗ***     Πάνω αριστερά εντοπίζονται οι 4 σελίδες του ταμπλό. 
                                 Καθεμία λέξη αντιπροσωπεύει και την αντίστοιχη θεματική σελίδα. 
                                 """,
@@ -62,9 +70,10 @@ layout = html.Div(
                                 "font-family": "arial",
                                 "textAlign": "left",
                                 "fontSize": 15,
-                            }
+                            },
                         ),
-                        dcc.Markdown("""
+                        dcc.Markdown(
+                            """
                                 ***ΧΡΗΣΗ***     Τα γραφήματα των σελίδων είναι διαδραστικά. Συγκεκριμένα,
                                 σέρνοντας απλά τον κέρσορα στο επιθυμητό γράφημα, εμφανίζονται εικονίδια
                                 τα οποία δίνουν τη δυνατότητα αποθήκευσης του γραφήματος σε μορφή PNG, zoom in
@@ -78,7 +87,7 @@ layout = html.Div(
                                 "font-family": "arial",
                                 "textAlign": "left",
                                 "fontSize": 15,
-                            }
+                            },
                         ),
                     ],
                 ),
@@ -86,25 +95,30 @@ layout = html.Div(
                 html.Br(),
                 html.Br(),
                 html.Br(),
-                html.Div([
-                    html.Img(src=app.get_asset_url('auth.png'), 
-                             style={
-                                 'height':'6%',
-                                 'width':'6%',
-                                 'float' : 'left',
-                                 'position' : 'relative'
-                                 }
-                             ),
-                    html.Img(src=app.get_asset_url('tmxa.png'), 
-                             style={
-                                 'height':'6%',
-                                 'width':'6%',
-                                 'float' : 'right',
-                                 'position' : 'relative',
-                                 }
-                             )
+                html.Div(
+                    [
+                        html.Img(
+                            src=app.get_asset_url("auth.png"),
+                            style={
+                                "height": "6%",
+                                "width": "6%",
+                                "float": "left",
+                                "position": "relative",
+                            },
+                        ),
+                        html.Img(
+                            src=app.get_asset_url("tmxa.png"),
+                            style={
+                                "height": "6%",
+                                "width": "6%",
+                                "float": "right",
+                                "position": "relative",
+                            },
+                        ),
                     ],
-                    style={"display": "inline-block"}),
-            ]),
-        ]
-    )
+                    style={"display": "inline-block"},
+                ),
+            ]
+        ),
+    ]
+)

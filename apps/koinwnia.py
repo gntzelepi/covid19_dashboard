@@ -13,7 +13,7 @@ DATA_PATH = PATH.joinpath("../datasets").resolve()
 
 # figure update with specified margin
 def update_figure(figure, title):
-    return update_fig(figure, title, margin = dict(l=30, r=30, t=150, b=70))
+    return update_fig(figure, title, margin=dict(l=30, r=30, t=150, b=70))
 
 
 """ DATASETS AND FIGURES CODE """
@@ -174,9 +174,7 @@ update_figure(
 # smaller text in graph & hover info modifications
 fig_6.update_traces(textfont_size=12, hovertemplate="<br>".join(["%{x}%"]))
 # show x labels when hovering
-fig_6.update_layout(
-    hovermode="x"
-)
+fig_6.update_layout(hovermode="x")
 
 
 # Dataset 7
@@ -310,8 +308,7 @@ fig_11.data[2].update(mode="markers+lines")
 fig_11.data[3].update(mode="markers+lines")
 # show percentage when hovering
 fig_11.update_traces(hovertemplate="<br>".join(["%{y}%"]))
-fig_11.update_layout(font=dict(
-            size=10))
+fig_11.update_layout(font=dict(size=10))
 
 
 # Dataset 12
@@ -390,7 +387,6 @@ fig_14.update_traces(
 )
 
 
-
 # Dataset 15
 erwtisi_32 = pd.read_csv(DATA_PATH.joinpath("erwtisi_32.csv"))
 # Figure 15
@@ -441,10 +437,15 @@ layout = html.Div(
                             },
                         ),
                         html.Br(),
-                        html.Label([
-                            'Επιλεγμένες ερωτήσεις 6 ερευνών του οργανισμού έρευνας και ανάλυσης «διαΝΕΟσις». Οι ',
-                            html.A('έρευνες', href='https://www.dianeosis.org/research/covid-19/'),
-                            ' αυτές διεξήχθησαν τον Απρίλιο, Σεπτέμβριο και Δεκέμβριο 2020, και Ιανουάριο, Μάρτιο και Μάιο 2021, οι οποίες απαρτίζονται από ερωτήσεις με κεντρικό άξονα την πανδημία. Κατά μέσο όρο, σε κάθε έρευνα έλαβαν μέρος 1.153 άτομα ηλικίας 17 ετών και άνω. Αθροίσματα που υπολείπονται του 100% ή υπερβαίνουν το 100%, οφείλονται σε στρογγυλοποιήσεις.'],
+                        html.Label(
+                            [
+                                "Επιλεγμένες ερωτήσεις 6 ερευνών του οργανισμού έρευνας και ανάλυσης «διαΝΕΟσις». Οι ",
+                                html.A(
+                                    "έρευνες",
+                                    href="https://www.dianeosis.org/research/covid-19/",
+                                ),
+                                " αυτές διεξήχθησαν τον Απρίλιο, Σεπτέμβριο και Δεκέμβριο 2020, και Ιανουάριο, Μάρτιο και Μάιο 2021, οι οποίες απαρτίζονται από ερωτήσεις με κεντρικό άξονα την πανδημία. Κατά μέσο όρο, σε κάθε έρευνα έλαβαν μέρος 1.153 άτομα ηλικίας 17 ετών και άνω. Αθροίσματα που υπολείπονται του 100% ή υπερβαίνουν το 100%, οφείλονται σε στρογγυλοποιήσεις.",
+                            ],
                             style={
                                 "font-family": "arial",
                                 "width": "100%",
@@ -452,8 +453,8 @@ layout = html.Div(
                                 "textAlign": "center",
                                 "border": "none",
                                 "resize": "none",
-                                'float': 'center'
-                                },
+                                "float": "center",
+                            },
                         ),
                         html.Br(),
                         html.Br(),
@@ -465,14 +466,8 @@ layout = html.Div(
                                 "text-decoration": "underline",
                             },
                         ),
-                        dcc.Graph(
-                            figure=fig,
-                            style=DEFAULT_STYLE
-                        ), 
-                        dcc.Graph(
-                            figure=fig_2,
-                            style=DEFAULT_STYLE
-                        ),
+                        dcc.Graph(figure=fig, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_2, style=DEFAULT_STYLE),
                         html.H6(
                             "Λήξη πρώτου lockdown - Σεπτέμβριος 2020",
                             style={
@@ -497,30 +492,12 @@ layout = html.Div(
                                 "text-decoration": "underline",
                             },
                         ),
-                        dcc.Graph(
-                            figure=fig_5,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_6,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_7,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_8,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_9,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_10,
-                            style=DEFAULT_STYLE
-                        ),
+                        dcc.Graph(figure=fig_5, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_6, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_7, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_8, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_9, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_10, style=DEFAULT_STYLE),
                         html.H6(
                             "Λήξη δεύτερου lockdown - Μάιος 2021",
                             style={
@@ -529,22 +506,10 @@ layout = html.Div(
                                 "text-decoration": "underline",
                             },
                         ),
-                        dcc.Graph(
-                            figure=fig_11,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_13,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_15,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_12,
-                            style=DEFAULT_STYLE
-                        ),
+                        dcc.Graph(figure=fig_11, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_13, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_15, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_12, style=DEFAULT_STYLE),
                         dcc.Graph(
                             figure=fig_14,
                             style={"height": "80%", "width": "50%", "margin": "0 auto"},

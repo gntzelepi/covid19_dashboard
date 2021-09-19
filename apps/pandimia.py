@@ -173,7 +173,8 @@ layout = html.Div(
                             },
                         ),
                         html.Br(),
-                        dcc.Markdown("Η εξέλιξη της πανδημίας στη χώρα, συμπεριλαμβανομένων των κρουσμάτων, θανάτων νοσούντων, εισαγωγών σε ΜΕΘ, τεστ & θετικότητας αυτών, και των εμβολιασμών.",
+                        dcc.Markdown(
+                            "Η εξέλιξη της πανδημίας στη χώρα, συμπεριλαμβανομένων των κρουσμάτων, θανάτων νοσούντων, εισαγωγών σε ΜΕΘ, τεστ & θετικότητας αυτών, και των εμβολιασμών.",
                             style={
                                 "font-family": "arial",
                                 "width": "100%",
@@ -184,30 +185,12 @@ layout = html.Div(
                         ),
                         html.Br(),
                         html.Br(),
-                        dcc.Graph(
-                            figure=fig,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_2,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_3,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_4,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_5,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_6,
-                            style=DEFAULT_STYLE
-                        ),
+                        dcc.Graph(figure=fig, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_2, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_3, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_4, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_5, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_6, style=DEFAULT_STYLE),
                     ]
                 ),
             ]

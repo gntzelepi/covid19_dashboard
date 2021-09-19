@@ -13,7 +13,7 @@ DATA_PATH = PATH.joinpath("../datasets").resolve()
 
 # figure update with specified margin
 def update_figure(figure, title):
-    return update_fig(figure, title, margin = dict(l=30, r=30, t=120, b=50))
+    return update_fig(figure, title, margin=dict(l=30, r=30, t=120, b=50))
 
 
 """ DATASETS AND FIGURES CODE"""
@@ -49,8 +49,7 @@ fig.data[2].name = "2021"
 # hover info modifications
 fig.update_traces(hovertemplate="<br>".join(["%{y}"]))
 # replace "k" suffix with simple comma when hovering
-fig.update_layout(
-    yaxis=dict(tickformat=",.0f"))
+fig.update_layout(yaxis=dict(tickformat=",.0f"))
 
 
 # Expenditure Dataset
@@ -133,7 +132,7 @@ fig_3.update_layout(
     margin=dict(l=100, r=100, t=30, b=150),
     paper_bgcolor="White",
     legend=dict(yanchor="top", y=0.97, xanchor="center", x=0.50),
-    yaxis=dict(tickformat=",.0f")
+    yaxis=dict(tickformat=",.0f"),
 )
 
 # make x axis tick labels smaller
@@ -269,7 +268,11 @@ fig_7.update_xaxes(type="category")
 for data in fig_7.data:
     data["width"] = 0.3
 # make space for explanation / annotation
-fig_7.update_layout(margin=dict(l=20, r=50, t=120, b=130), paper_bgcolor="White", yaxis=dict(tickformat=",.0f"))
+fig_7.update_layout(
+    margin=dict(l=20, r=50, t=120, b=130),
+    paper_bgcolor="White",
+    yaxis=dict(tickformat=",.0f"),
+)
 # annotation text
 note = 'Ισοζύγιο πληρωμών: στατιστικός πίνακας καταγραφής του σύνολο των οικονομικών συναλλαγών μεταξύ των κατοίκων<br>της χώρας και του υπόλοιπου κόσμου κατά τη διάρκεια ενός συγκεκριμένου χρονικού διαστήματος, συνήθως ενός έτους.<br>Βασικές κατηγορίες συναλλαγών είναι οι συναλλαγές σε αγαθά, υπηρεσίες, πρωτογενή εισοδήματα και δευτερογενή<br>εισοδήματα, το άθροισμα των ισοζυγίων των οποίων συνιστά το ισοζύγιο τρεχουσών συναλλαγών.<br>Πηγή:<a href="https://www.bankofgreece.gr/statistika/ekswterikos-tomeas/isozygio-plhrwmwn">Τράπεζα της Ελλάδος (χ.χ)</a>, Δεδομένα: <a href="https://ec.europa.eu/eurostat/databrowser/view/tipsbp14/default/table?lang=en">Eurostat (2021)</a>'
 # annotation addition
@@ -334,7 +337,8 @@ layout = html.Div(
                             },
                         ),
                         html.Br(),
-                        dcc.Markdown("Πως εξελίχθηκαν βασικά οικονομικά μεγέθη της οικονομίας όπως το ΑΕΠ, η ανεργία και ο πληθωρισμός. Ακόμη, απεικονίζονται το ισοζύγιο τρεχουσών συναλλαγών και οι ξένες άμεσες επενδύσεις, προκειμένου να εξεταστεί το σύνολο των οικονομικών συναλλαγών των Ελλήνων κατοίκων με τον υπόλοιπο κόσμο και η πρόθεση ξένων επενδυτών να αποκτήσουν διαρκές συμφέρον σε επιχειρήσεις της χώρας.",
+                        dcc.Markdown(
+                            "Πως εξελίχθηκαν βασικά οικονομικά μεγέθη της οικονομίας όπως το ΑΕΠ, η ανεργία και ο πληθωρισμός. Ακόμη, απεικονίζονται το ισοζύγιο τρεχουσών συναλλαγών και οι ξένες άμεσες επενδύσεις, προκειμένου να εξεταστεί το σύνολο των οικονομικών συναλλαγών των Ελλήνων κατοίκων με τον υπόλοιπο κόσμο και η πρόθεση ξένων επενδυτών να αποκτήσουν διαρκές συμφέρον σε επιχειρήσεις της χώρας.",
                             style={
                                 "font-family": "arial",
                                 "width": "100%",
@@ -346,38 +350,14 @@ layout = html.Div(
                         ),
                         html.Br(),
                         html.Br(),
-                        dcc.Graph(
-                            figure=fig,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_2,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_3,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_4,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_5,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_6,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_7,
-                            style=DEFAULT_STYLE
-                        ),
-                        dcc.Graph(
-                            figure=fig_8,
-                            style=DEFAULT_STYLE
-                        ),
+                        dcc.Graph(figure=fig, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_2, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_3, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_4, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_5, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_6, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_7, style=DEFAULT_STYLE),
+                        dcc.Graph(figure=fig_8, style=DEFAULT_STYLE),
                     ]
                 ),
             ]
