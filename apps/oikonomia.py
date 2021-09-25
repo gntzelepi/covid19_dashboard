@@ -342,7 +342,7 @@ layout = html.Div(
                             style={
                                 "font-family": "arial",
                                 "width": "100%",
-                                "height": 15,
+                                "height": 25,
                                 "textAlign": "center",
                                 "border": "none",
                                 "resize": "none",
